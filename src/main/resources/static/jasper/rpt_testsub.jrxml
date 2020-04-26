@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_testsub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ade43373-e70e-4033-806b-c51f05f9e482">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="academyDB"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="studentid" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select *
+from student
+where student.studentid=$P{studentid}]]>
+	</queryString>
+	<field name="studentid" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="studentid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="rollnumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rollnumber"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="studentname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="studentname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="grade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="grade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="section" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="section"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="30" uuid="5c2cf5c4-b066-4108-902e-8b30957ef238">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97c2389d-14ea-4ba4-90b2-6e2ba3770bc9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{studentid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="30" uuid="0ba825f1-7102-43b7-87ec-983ae3f55a11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb30b7a0-4175-4876-9a06-b3c4b20e5ef8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{rollnumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="30" uuid="04386144-4e7e-4a74-8079-7287bd12c888">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8c10f6c-8423-4386-91f5-cfbdfdbb938a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{studentname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="30" uuid="5f86274a-b638-4c0e-a933-cba656930ae8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96d16938-76f7-402c-b5c9-9eaeaf4b495f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="30" uuid="7027cb93-8975-4f17-9f9d-0f6ff2ce0979">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b876e69-0172-49fa-936c-d078a357a263"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{section}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rtp_dbmarks" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="daa40d7d-254c-44ce-acd5-7e1906dc2d41">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="academyDB"/>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT studentname,subject,finalmark,studentid
+FROM marks]]>
+	</queryString>
+	<field name="studentname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="studentname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marks"/>
+	</field>
+	<field name="subject" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marks"/>
+	</field>
+	<field name="finalmark" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="finalmark"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="marks"/>
+	</field>
+	<field name="studentid" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="0" width="95" height="30" uuid="a895faa4-b689-4d02-871d-3821fad66a3e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8fcca681-51eb-4f0a-bdca-52ac70bbd9ae"/>
+				</reportElement>
+				<text><![CDATA[studentname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="185" height="30" uuid="686a0659-c515-4f54-b180-a364c9f6aca6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c489096-e4ba-47b3-997c-a0341f0b960c"/>
+				</reportElement>
+				<text><![CDATA[subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="30" uuid="0425ea36-d6b5-43a8-8c33-a48b15ea5ceb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d729acb1-c4d8-4a56-a3d6-049e3d8124b0"/>
+				</reportElement>
+				<text><![CDATA[finalmark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="30" uuid="c3696e00-3ec8-4b70-b14c-e3143b408974">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f0ec87a-050a-4cfd-a157-3bd8eb27a707"/>
+				</reportElement>
+				<text><![CDATA[studentid]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="148" splitType="Stretch">
+			<textField>
+				<reportElement x="90" y="0" width="95" height="30" uuid="b71bdf73-7f18-462b-b785-daca8dfe9046">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8fcca681-51eb-4f0a-bdca-52ac70bbd9ae"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{studentname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="30" uuid="73b0d626-c961-4280-8a47-d028c8fe6df9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c489096-e4ba-47b3-997c-a0341f0b960c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="30" uuid="a9c1a231-6185-4546-ba3b-69d2d2b73984">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d729acb1-c4d8-4a56-a3d6-049e3d8124b0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{finalmark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="70" height="30" uuid="33d3c56e-25dd-4901-927d-29634082d737">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f0ec87a-050a-4cfd-a157-3bd8eb27a707"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{studentid}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="48" width="471" height="91" uuid="46fda432-5700-448b-90f5-c927df9f5906"/>
+				<subreportParameter name="studentid">
+					<subreportParameterExpression><![CDATA[$F{studentid}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="17" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_employee" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3ea1ba64-c71c-481f-a19c-002509857228">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="bd562d77-a1cd-464c-8dc0-15488dfc34cb">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="studentName" class="java.lang.String"/>
+	<parameter name="objStudent" class="com.academy.data.domains.Student"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subject" class="java.lang.String"/>
+	<field name="maxMark" class="java.lang.Integer"/>
+	<field name="passMark" class="java.lang.Integer"/>
+	<field name="semester1" class="java.lang.Integer"/>
+	<field name="semester2" class="java.lang.Integer"/>
+	<field name="finalGrade" class="java.lang.Integer"/>
+	<field name="subjectGrad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="222" splitType="Stretch">
+			<textField>
+				<reportElement x="121" y="160" width="180" height="15" uuid="963e12d2-787e-4416-b682-7c5c9a23f7c1"/>
+				<textFieldExpression><![CDATA[$P{objStudent}.getRollnumber()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="136" width="309" height="20" uuid="e3a535b5-e7b0-46f4-9000-99bf187bb005"/>
+				<textFieldExpression><![CDATA[$P{objStudent}.getStudentname()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="200" y="10" width="143" height="93" uuid="69c40541-f6be-452f-a00b-8c01af0e84fc"/>
+				<imageExpression><![CDATA["static/jasper/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="10" y="40" width="170" height="30" uuid="308c52d5-31aa-4fb9-ae57-6dc687dca507"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMERICAN ACADEMY SCHOOL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="40" width="160" height="30" uuid="0fd7e23e-0316-4e20-9ece-44a42acbce7d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[مدرسة الأكاديمية الأمريكية
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="103" width="180" height="30" uuid="6bf7d71b-01e4-49d1-9f17-333543958fd8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[End of Year Report Card
+2018-2019]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="136" width="90" height="20" uuid="88d488b4-ada9-47e6-b567-2d3a7b6f68c8"/>
+				<box leftPadding="5"/>
+				<text><![CDATA[Name: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="160" width="100" height="15" uuid="d27757b8-5539-4fc6-9811-c72bcfda86d5"/>
+				<text><![CDATA[ID No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="160" width="40" height="15" uuid="3b9a70cf-d798-4e64-bacb-a93db9f7a6bb"/>
+				<textFieldExpression><![CDATA[$P{objStudent}.getGrade()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="160" width="50" height="15" uuid="25b39663-29b2-4d7c-8475-f78206c077d8"/>
+				<textFieldExpression><![CDATA[$P{objStudent}.getSection()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="10" y="185" width="190" height="30" uuid="b6f25d52-7406-4dd0-87cf-f3b376ef39ef">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="ec496b1e-b8e8-41e0-a43d-cf35e75bac40">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="650e8b76-4821-440b-9bb0-77d260c7841f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="20" uuid="db04bfdf-521e-41bd-9950-e611d6c11a0d"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[Attendance]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="75426c52-0542-4faf-9de6-8f995cb7e36d"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[Day Absent]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="0"/>
+					</jr:column>
+					<jr:column width="30" uuid="9e9ac406-f884-4bca-a5df-9e300bf65d08">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="30" height="20" uuid="698aeda0-1b14-4f95-b454-4c250af7ea1c"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[1st]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="30" height="30" uuid="3d2ad3bd-2121-4946-a864-9dd941b0d16d"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[0]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="0"/>
+					</jr:column>
+					<jr:column width="60" uuid="39c862f1-befb-4a69-8e73-4e70e51b8369">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="20" uuid="6be6b1f9-d935-4f1a-85b5-f7ecb22d8bd5"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[2nd]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="dce82268-c5b0-4b11-bc23-932591f9be09"/>
+								<box>
+									<topPen lineWidth="1.0"/>
+									<leftPen lineWidth="1.0"/>
+									<bottomPen lineWidth="1.0"/>
+									<rightPen lineWidth="1.0"/>
+								</box>
+								<text><![CDATA[0]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="0"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="0" width="100" height="21" uuid="67dff6cd-9b53-44d0-b74a-bdc45d2ef933"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Core Subjects]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="0" width="50" height="21" uuid="c398ecd2-a520-4ed8-95b3-571e6714d5e8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Max]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="0" width="60" height="21" uuid="4108cee9-7ad5-4fe0-aa73-309c7b339fee"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pass]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="70" height="21" uuid="11d3f83f-2d92-4654-947f-7c597e4bb675">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0356f532-ab56-4ebf-a4ef-1e10972031f2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[semester1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="60" height="21" uuid="b35e4e7e-90da-468a-b9ce-2f2bbd968ba8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="234c7bcb-d241-4d1c-bc7b-bf05154e5ea6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[semester2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="60" height="21" uuid="73ef59ec-c7cc-4d63-bfac-ef6d6c340b5b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="605b8f04-c0fe-4265-a1c1-9ae11f45ecce"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[finalGrade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="70" height="21" uuid="90937754-334b-4ef9-8386-1dab1766b894">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3dfd2a4d-9c3e-4e14-a7e6-0b10727f24d4"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[subjectGrad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="0" width="100" height="20" uuid="ca5caf22-b65a-48f3-852a-25d6ab82cd30">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="891a0a02-44d0-4747-9d13-67da6b92fadf"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="0" width="50" height="20" uuid="c3854edd-5798-417d-83a9-8c783d2b0f00">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bde6b78c-e923-4ed9-8422-0c4cf33fc347"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maxMark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="60" height="20" uuid="df3d1845-8a4e-4642-b470-140a240a0530">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01ca58c5-8a3d-4f50-a891-fa2ef15035b3"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{passMark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="60" height="20" uuid="343b7d2c-d5b9-4c7a-94fa-f7433729a733">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0356f532-ab56-4ebf-a4ef-1e10972031f2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{semester1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="70" height="20" uuid="89267d32-0374-4fbb-812e-309cd9d4f569">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="234c7bcb-d241-4d1c-bc7b-bf05154e5ea6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{semester2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="50" height="20" uuid="a8f569dd-b309-497e-aa75-6fec7fbcde03">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="605b8f04-c0fe-4265-a1c1-9ae11f45ecce"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{finalGrade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="80" height="20" uuid="196ab918-e2ad-48be-b6a6-744e90982d93">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3dfd2a4d-9c3e-4e14-a7e6-0b10727f24d4"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{subjectGrad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="330" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="3ce13764-7be4-4e57-89c8-c17c321d8f0c"/>
+				<text><![CDATA[Comments]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="24" width="540" height="66" uuid="d322c45a-c89a-468b-8675-5c07978c6c38"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="30" width="100" height="20" uuid="2310e59a-7af3-46c8-9df7-0854e09f7119"/>
+				<text><![CDATA[Semester 1:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="50" width="100" height="20" uuid="3d0b686c-893e-4669-88e8-b2f30bdd9fa2"/>
+				<text><![CDATA[Semester 2:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="70" width="100" height="20" uuid="1323fffb-0d33-497e-96af-6f8d5f2302b0"/>
+				<text><![CDATA[Result:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="110" width="154" height="20" uuid="19ede677-329f-44cd-840f-4791a862e313"/>
+				<text><![CDATA[Maximum Grade 100%]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="10" y="133" width="535" height="46" uuid="a3d71c8f-14f4-40d3-a72c-3b200dbdeae1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="133" width="90" height="44" uuid="ef864403-ab62-4a87-b5a5-8d67bce0fb2d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[A+ = 97-100
+A= 93-96
+A= 90-92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="133" width="90" height="44" uuid="395ca5f7-7318-4d20-86c4-a3faf6cf3d71"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[A+ = 97-100
+A= 93-96
+A= 90-92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="133" width="111" height="44" uuid="c690c52a-0767-4d92-bc0d-b961665fe663"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[A+ = 97-100
+A= 93-96
+A= 90-92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="135" width="129" height="44" uuid="f5f3414a-ccbb-4def-b0af-2c071ab58b80"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[A+ = 97-100
+A= 93-96
+A= 90-92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="135" width="111" height="44" uuid="fd0d35a9-1c9a-4d4b-8db0-79f429c48c22"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[
+BA = 0-49
+NG = No Grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="113" width="154" height="20" uuid="ab326737-0fd5-49d3-924c-56abbeeac90c"/>
+				<text><![CDATA[Passing Grade 50%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="190" width="532" height="40" uuid="105a7a00-ac9a-420f-aaad-2dbd0bd3a211"/>
+				<text><![CDATA[Abbreviation: (Eng) English Language, (Eng) English Language ,(Eng) English Language, (Eng) English Language,(Eng) English Language,(Eng) English Language,(Eng) English Language,(Eng) English Language]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="240" width="154" height="20" uuid="306d9fdd-ae3b-4520-83b7-78643c5dc12b"/>
+				<text><![CDATA[Promoted to Grade: 10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="269" width="154" height="20" uuid="86442053-e285-4ab3-90aa-0b23b249a3bb"/>
+				<text><![CDATA[Teacher : Chadi Rahme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="300" width="154" height="20" uuid="8771bbf7-dc7f-4cba-9d8a-4e5c469ed9d2"/>
+				<text><![CDATA[Principle : Chadi Rahme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="300" width="154" height="20" uuid="77bbe167-2067-40a3-8ffa-4cb76f8f032e"/>
+				<text><![CDATA[Date: 14 June 2018]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,46 @@
+ssh root@139.162.169.243
+ch@d1rahme for ssh
+systemctl stop tomcat
+cd /opt/tomcat/logs/
+
+
+local: /Users/chadirahme/IdeaProjects/maki-inventory/target/
+ftp : /opt/tomcat/maki-inventory/ROOT/WEB-INF/classes/static
+port 80 to 8080
+https://glassonionblog.wordpress.com/2011/04/08/tomcat-redirecting-traffic-from-port-8080-to-80-using-iptables/
+
+netstat -ntl
+
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+iptables -t nat -L
+
+to remove
+iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+
+
+
+@RequestMapping(value="/member/media/allrandomreports",method=RequestMethod.GET,produces = {"application/vnd.ms-excel;charset=UTF-8","application/pdf;charset=UTF-8"})
+
+
+ALTER TABLE `itemdescription` CONVERT TO CHARACTER SET utf8 COLLATE
+utf8_unicode_ci;
+
+ALTER TABLE `assignment` CONVERT TO CHARACTER SET utf8 COLLATE
+utf8_unicode_ci;
+
+ALTER TABLE items CONVERT TO CHARACTER SET utf8 COLLATE
+utf8_unicode_ci;
+url: "jdbc:mysql://localhost:3306/maki?characterEncoding=utf-8"
+
+   fix mysql server run error :
+   sudo chown -R mysql /usr/local/mysql/*
+
+
+http://chathurangat.blogspot.com/2012/02/jasperreport-with-spring-mvc-fully.html
+
+https://github.com/gauravbrills/jasperreportswithspringboot
+
+
+https://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started
